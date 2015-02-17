@@ -1,0 +1,9 @@
+{% if posts %}
+    {% for post in posts %}
+        {% include ['partials/tease-'~post.format~'.twig','partials/tease-'~post.post_type~'.twig', 'partials/tease.twig'] %}
+    {% endfor %}
+{% else %}
+        {% include 'partials/content-none.twig' %}
+{% endif %}
+
+{% include 'partials/pagination.twig' %}

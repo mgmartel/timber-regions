@@ -1,0 +1,15 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+    {% include ["partials/content-" ~ post.post_type ~ ".twig", "partials/content.twig"] %}
+
+    {% block author_info %}
+        {% include "partials/author.twig" %}
+    {% endblock %}
+
+    {% block comments %}
+        {% include "partials/comments.twig" %}
+    {% endblock %}
+
+{% endblock %}

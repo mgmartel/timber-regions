@@ -1,0 +1,5 @@
+{#- entry meta information for posts, used by multiple loops, you can override this partial in your child theme -#}
+<div class="entry-meta">
+    <span class="byline author">{{ __('Written by', 'timber-regions') }} <a href="{{ post.author.link }}" rel="author" class="fn">{{ post.author.name }}</a></span>
+    <time class="updated" datetime="{{ post.post_date|date('c') }}" pubdate>{{ post.post_date|date }}</time>
+</div>

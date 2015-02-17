@@ -1,0 +1,11 @@
+{% extends "layouts/base.twig" %}
+
+{% block layout %}
+
+    <div class="content-wrapper sidebar-right" id="content" role="main">
+        {% block content %}{% endblock %}
+    </div>
+
+    {% include 'partials/sidebar.twig' %}
+
+{% endblock %}

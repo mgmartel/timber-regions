@@ -1,0 +1,5 @@
+{% if fn('is_active_sidebar','sidebar') %}
+    <aside id="sidebar" class="{{ sidebar_classes }} columns">
+        {{ fn('dynamic_sidebar','sidebar') }}
+    </aside>
+{% endif %}

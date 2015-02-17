@@ -1,0 +1,15 @@
+{#
+   This file renders template files in the regions folder based on the regions
+   object and a region parameter. If you have multiple regions of the same type,
+   assign a region ID to distinguish the regions from each other.
+   It will look first for {region}-{template}.twig, then for {template}.twig.
+-#}
+{% if region_id is not defined %}{% set region_id = region %}{% endif -%}
+
+{%- if attribute(regions,region_id) is iterable -%}
+    {%- for part in attribute(regions,region_id) -%}
+        {%- include ['regions/' ~ region ~ '-' ~ part ~ '.twig', 'regions/' ~ part ~ '.twig'] ignore missing -%}
+    {%- endfor -%}
+{%- elseif attribute(regions,region_id) is not empty -%}
+    {%- include ['regions/' ~ region ~ '-' ~ attribute(regions,region_id) ~ '.twig', 'regions/' ~ attribute(regions,region_id) ~ '.twig' ] ignore missing -%}
+{%- endif %}

@@ -1,0 +1,7 @@
+<figure class="entry-thumbnail">
+    <a href="{{ post.link }}">
+        {%- if post.thumbnail.src -%}
+            <img src="{{ post.thumbnail.src('large') }}" alt="{{ post.thumbnail.alt }}" title="{{ post.thumbnail.title }}" />
+        {%- endif -%}
+    </a>
+</figure>

@@ -1,0 +1,7 @@
+{% for page in post.pagination.pages %}
+    {% if loop.first %}<nav id="page-nav"><p>{{ __('Pages','timber-regions') }}{% endif %}
+    {% if not page.current %}<a href='{{ page.link }}'>{% endif %}
+        {{ page.text }}
+    {% if not page.current %}</a>{% endif %}
+    {% if loop.last %}</p></nav>{% endif %}
+{% endfor %}

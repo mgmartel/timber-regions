@@ -1,0 +1,26 @@
+{%	if post.password_required %}
+	<section class="comments">
+		<div class="notice">
+			<p>{{ __('This post is password protected. Enter the password to view comments.', 'timber-regions') }}</p>
+		</div>
+	</section>
+
+{% elseif post.get_comments or post.comments_open %}
+
+    <section class="comments">
+
+        <h3>{{ fn('comments_number',__('No Responses to', 'timber-regions'), __('One Response to', 'timber-regions'), __('% Responses to', 'timber-regions')) }} &#8220; {{ post.title }} &#8221;</h3>
+
+        <div class="responses">
+            {% for cmt in post.get_comments %}
+                {% include "partials/comment.twig" with {comment:cmt} %}
+            {% endfor %}
+        </div>
+
+        <div class="respond">
+            {{ comment_form }}
+        </div>
+
+    </section>
+
+{% endif %}{# password_required #}

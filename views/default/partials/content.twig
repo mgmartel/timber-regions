@@ -1,0 +1,26 @@
+<article class="{{ post.class }}" id="post-{{ post.ID }}">
+
+    <header class="entry-header">
+        {% block content_header %}
+            {% include "partials/post-thumbnail.twig" %}
+            {% include "partials/entry-title.twig" %}
+            {% include "partials/entry-meta.twig" %}
+        {% endblock %}
+    </header>
+
+    <div class="entry-content">
+        {% block content_main %}
+            {{- post.paged_content -}}
+            {%- if post.can_edit %}
+                <div class='edit-link'><a href='{{ post.edit_link }}'>{{ __( 'Edit', 'timber-regions' ) }}</a></div>
+            {% endif %}
+        {% endblock %}
+    </div>
+
+    <footer>
+        {% block content_footer %}
+            {%- include "partials/page-links.twig" -%}
+        {% endblock %}
+    </footer>
+
+</article>

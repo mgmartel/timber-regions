@@ -1,0 +1,33 @@
+{% block html_head_container %}
+    {% include 'partials/html-header.twig' %}
+    {% block head %}
+    {% endblock %}
+    </head>
+{% endblock %}
+
+    <body {{fn('body_class')}}>
+        {% block body %}
+
+            {% block header %}
+                <header class="header" role="banner">
+                    {% include 'regions/_get_region.twig' with { region: 'header' } %}
+                </header>
+            {% endblock %}
+
+            {% block main %}
+                <section role="document" class="document-container container">
+                    {% block layout %}{% endblock %}
+                </section>
+            {% endblock %}
+
+            {% block footer %}
+                <footer id="footer">
+                    {% include 'regions/_get_region.twig' with { region: 'footer' } %}
+                </footer>
+            {% endblock %}
+
+        {% endblock %}
+
+        {{ function('wp_footer') }}
+    </body>
+</html>

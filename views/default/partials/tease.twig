@@ -1,0 +1,12 @@
+<article class="tease tease-{{ post.post_type }}" id="tease-{{ post.ID }}">
+	{% block content %}
+        <header>
+            <h2><a href="{{ post.link }}" title="{{ post.title }}">{{ post.title }}</a></h2>
+            {% include "partials/entry-meta.twig" %}
+        </header>
+        <div class="entry-content">
+            {% include "partials/post-thumbnail.twig" %}
+            <p>{{ post.get_preview }}</p>
+        </div>
+	{% endblock %}
+</article>

@@ -1,0 +1,9 @@
+<div class="entry-author">
+    <div class="author-avatar">
+        {{ post.author.avatar(95) }}
+    </div>
+    <div class="author-info">
+        <h4><a href='{{ post.author.link }}' title="{{ post.author.name }}">{{ post.author.name }}</a></h4>
+        <p class="author-description">{{ post.author.meta('description') }}</p>
+    </div>
+</div>

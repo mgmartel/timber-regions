@@ -1,0 +1,9 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+    <h2>{{ __( 'Search Results for "%s"', 'timber-regions' )|format(fn('get_search_query')) }}</h2>
+
+    {% include "partials/loop-tease.twig" %}
+
+{% endblock %}
